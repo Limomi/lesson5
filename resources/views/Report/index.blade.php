@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Массивчик</title>
+    <title>База</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -21,11 +20,16 @@
             База таблица
         </a>
     </header>
-    @foreach($array as $item)
-        <div>
-            <img src="{{$item['path']}}" alt="">
-            <p>{{ $item['title'] }}</p>
-            <p>{{ $item['price'] }}</p>
+    @foreach($reports as $item)
+        <div class="container">
+            <div class="itemRow">
+                <div class="itemId">
+                    {{ $item['id'] }}
+                </div>
+                <div class="itemName">
+                    {{ $item['name'] }}
+                </div>
+            </div>
         </div>
     @endforeach
 </body>

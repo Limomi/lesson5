@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <header>
         <H1>
-            Логотип сайта
+            Нарушений.нет
         </H1>
         <a href="">
             Главная
         </a>
         <a href="array">
             Массивы
+        </a>
+        <a href="report">
+            База таблица
         </a>
     </header>
     <main>
