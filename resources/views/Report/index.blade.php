@@ -20,17 +20,31 @@
             База таблица
         </a>
     </header>
-    @foreach($reports as $item)
+    @foreach($reports as $report)
         <div class="container">
             <div class="itemRow">
                 <div class="itemId">
-                    {{ $item['id'] }}
+                    {{ $report['id'] }}
                 </div>
-                <div class="itemName">
-                    {{ $item['name'] }}
+                <a class="itemName" href="/report/{{$report['id']}}">
+                    {{ $report['name'] }}
+                </a>
+                <div class="deleteItem">
+                    <form method="POST" action="{{route('reports.destroy', $report -> id)}}">
+                        @method('delete')
+                        @csrf
+                        <input type="submit" value="Удалить">
+                    </form>
                 </div>
             </div>
         </div>
     @endforeach
+    
+    <form  method="POST" action="{{route('reports.store')}}">
+        @csrf
+        <input name ="name" type="text" class="formInput"><br>
+        <input type="textaria" class="formInput"><br>
+        <input type="submit" value="Создать">
+    </form>
 </body>
 </html>

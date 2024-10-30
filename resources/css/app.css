@@ -11,3 +11,8 @@
     display: flex;
     justify-content:space-between;
 }
+
+.formInput{
+    border: 2px black solid;
+
+}
